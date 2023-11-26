@@ -1,18 +1,4 @@
 
-//EVENTLISTENER SUR LA FLECHE GAUCHE
-let flecheGauche = document.querySelector(".arrow_left")
-
-flecheGauche.addEventListener("click", () => {
-	console.log("J'ai cliqué sur la flèche gauche")
-})
-
-//EVENTLISTENER SUR LA FLECHE DROITE
-let flecheDroite = document.querySelector(".arrow_right")
-
-flecheDroite.addEventListener("click", () => {
-	console.log("J'ai cliqué sur la flèche droite")
-})
-
 
 
 
@@ -34,3 +20,26 @@ const slides = [
 		"tagLine": "Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+
+let bannerImage = document.querySelector(".banner-img")
+let flecheGauche = document.querySelector(".arrow_left")
+let flecheDroite = document.querySelector(".arrow_right")
+
+
+//EVENTLISTENER SUR LA FLECHE GAUCHE
+flecheGauche.addEventListener("click", () => {
+	
+	console.log("J'ai cliqué sur la flèche gauche")
+})
+
+
+//EVENTLISTENER SUR LA FLECHE DROITE
+flecheDroite.addEventListener("click", () => {
+
+
+
+	console.log("J'ai cliqué sur la flèche droite")
+})
+
+
+
