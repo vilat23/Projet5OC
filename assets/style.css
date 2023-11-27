@@ -132,10 +132,12 @@ header {
 #banner .arrow_left {
 	left: 10px;
 	padding-left: 5%;
+	cursor: pointer;
 }
 #banner .arrow_right {
 	right: 10px;
 	padding-right: 5%;
+	cursor: pointer;
 }
 /* Gestion des points du carrousel */
 .dots {

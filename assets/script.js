@@ -1,6 +1,5 @@
 
-
-
+//TABLEAU DES IMAGES DU SLIDER ET LES TAGLINES
 
 const slides = [
 	{
@@ -21,25 +20,45 @@ const slides = [
 	}
 ]
 
-let bannerImage = document.querySelector(".banner-img")
-let flecheGauche = document.querySelector(".arrow_left")
-let flecheDroite = document.querySelector(".arrow_right")
 
+//FONCTION POUR CHANGER LES IMAGES
 
-//EVENTLISTENER SUR LA FLECHE GAUCHE
+/* On récupère les éléments "flèches" de navigation pour les mettre dans des variables */
+
+const flecheGauche = document.querySelector(".arrow_left")
+const flecheDroite = document.querySelector(".arrow_right")
+
+/* On récupère les éléments "emplacements" -> image du slide et tagline
+pour les mettre dans des variables à cibler pour les modifier avec les fonctions */
+
+const slide = document.getElementById("slide")
+const slideTag = document.getElementById("slideTag")
+
+/* On défini ici la valeur de l'index de l'image du slider à 0 */
+let numeroSlide = 0;
+
+//eventListener au clic sur la fleche gauche
 flecheGauche.addEventListener("click", () => {
-	
-	console.log("J'ai cliqué sur la flèche gauche")
+	numeroSlide = numeroSlide - 1;
+
+	if (numeroSlide < 0)
+		numeroSlide = slides.length - 1; /* .length->propriete javascript pour compter le nb d'elements ds le tableau*/
+
+	slide.src = "./assets/images/slideshow/" + slides[numeroSlide].image;
+	slideTag.innerHTML = slides[numeroSlide].tagLine;
+
+	//console.log("J'ai cliqué sur la flèche gauche")
 })
 
-
-//EVENTLISTENER SUR LA FLECHE DROITE
+//eventListener au clic sur la fleche droite
 flecheDroite.addEventListener("click", () => {
 
+	numeroSlide = numeroSlide + 1;
+	if (numeroSlide > slides.length - 1)
+		numeroSlide = 0;
 
+	slide.src = "./assets/images/slideshow/" + slides[numeroSlide].image;
+	slideTag.innerHTML = slides[numeroSlide].tagLine;
 
-	console.log("J'ai cliqué sur la flèche droite")
+	//console.log("J'ai cliqué sur la flèche droite")
 })
-
-
-
