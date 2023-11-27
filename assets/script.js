@@ -33,9 +33,19 @@ pour les mettre dans des variables à cibler pour les modifier avec les fonction
 
 const slide = document.getElementById("slide")
 const slideTag = document.getElementById("slideTag")
-
+const slideDot = document.querySelectorAll(".dot")
 /* On défini ici la valeur de l'index de l'image du slider à 0 */
 let numeroSlide = 0;
+slideDotSelected()
+
+function slideDotSelected() {
+	slideDot.forEach((dot, index) => {
+		dot.classList.remove("dot_selected");
+		if (index === numeroSlide){
+			dot.classList.add("dot_selected");
+		}
+	});
+}
 
 //eventListener au clic sur la fleche gauche
 flecheGauche.addEventListener("click", () => {
@@ -46,6 +56,7 @@ flecheGauche.addEventListener("click", () => {
 
 	slide.src = "./assets/images/slideshow/" + slides[numeroSlide].image;
 	slideTag.innerHTML = slides[numeroSlide].tagLine;
+	slideDotSelected()
 
 	//console.log("J'ai cliqué sur la flèche gauche")
 })
@@ -59,6 +70,7 @@ flecheDroite.addEventListener("click", () => {
 
 	slide.src = "./assets/images/slideshow/" + slides[numeroSlide].image;
 	slideTag.innerHTML = slides[numeroSlide].tagLine;
+	slideDotSelected()
 
 	//console.log("J'ai cliqué sur la flèche droite")
 })
