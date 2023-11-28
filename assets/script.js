@@ -20,9 +20,6 @@ const slides = [
 	}
 ]
 
-
-//FONCTION POUR CHANGER LES IMAGES
-
 /* On récupère les éléments "flèches" de navigation pour les mettre dans des variables */
 
 const flecheGauche = document.querySelector(".arrow_left")
@@ -36,7 +33,8 @@ const slideTag = document.getElementById("slideTag")
 const slideDot = document.querySelectorAll(".dot")
 /* On défini ici la valeur de l'index de l'image du slider à 0 */
 let numeroSlide = 0;
-slideDotSelected()
+
+/*fonction pour supprimer la class dot_selected par défaut et l'afficher seulement sur la slide active */
 
 function slideDotSelected() {
 	slideDot.forEach((dot, index) => {
@@ -46,6 +44,8 @@ function slideDotSelected() {
 		}
 	});
 }
+
+//FONCTIONS POUR CHANGER LES IMAGES
 
 //eventListener au clic sur la fleche gauche
 flecheGauche.addEventListener("click", () => {
@@ -74,3 +74,7 @@ flecheDroite.addEventListener("click", () => {
 
 	//console.log("J'ai cliqué sur la flèche droite")
 })
+
+/* On rappelle la fonction pour afficher le dot_selected au chargement de la page pour le premier slide */
+
+slideDotSelected()
