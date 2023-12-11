@@ -31,21 +31,39 @@ pour les mettre dans des variables à cibler pour les modifier avec les fonction
 const slide = document.getElementById("slide")
 const slideTag = document.getElementById("slideTag")
 const slideDot = document.querySelectorAll(".dot")
+
 /* On défini ici la valeur de l'index de l'image du slider à 0 */
 let numeroSlide = 0;
+
+
+// fonction pour ajouter les dots en javascript
+
+for (let i = 0; i < slides.length; i++) {
+	const dots = banner.querySelector(".dots");
+	const dot = document.createElement("div");
+	dot.classList.add("dot");
+	dots.appendChild(dot);
+
+}
+
 
 /*fonction pour supprimer la class dot_selected par défaut et l'afficher seulement sur la slide active */
 
 function slideDotSelected() {
 	slideDot.forEach((dot, index) => {
 		dot.classList.remove("dot_selected");
-		if (index === numeroSlide){
+		if (index === numeroSlide) {
 			dot.classList.add("dot_selected");
 		}
 	});
 }
 
-//FONCTIONS POUR CHANGER LES IMAGES
+//FONCTION POUR MODIFIER LES IMAGES ET TAGLINES
+
+function slideChange() {
+	slide.src = "./assets/images/slideshow/" + slides[numeroSlide].image;
+	slideTag.innerHTML = slides[numeroSlide].tagLine;
+}
 
 //eventListener au clic sur la fleche gauche
 flecheGauche.addEventListener("click", () => {
@@ -54,11 +72,15 @@ flecheGauche.addEventListener("click", () => {
 	if (numeroSlide < 0)
 		numeroSlide = slides.length - 1; /* .length->propriete javascript pour compter le nb d'elements ds le tableau*/
 
+	slideChange()
+	/*
+	->Mis dans une fonction | 
 	slide.src = "./assets/images/slideshow/" + slides[numeroSlide].image;
 	slideTag.innerHTML = slides[numeroSlide].tagLine;
+	*/
+
 	slideDotSelected()
 
-	//console.log("J'ai cliqué sur la flèche gauche")
 })
 
 //eventListener au clic sur la fleche droite
@@ -68,11 +90,15 @@ flecheDroite.addEventListener("click", () => {
 	if (numeroSlide > slides.length - 1)
 		numeroSlide = 0;
 
+	slideChange()
+	/*
+	->Mis dans une fonction | 
 	slide.src = "./assets/images/slideshow/" + slides[numeroSlide].image;
 	slideTag.innerHTML = slides[numeroSlide].tagLine;
+	*/
+
 	slideDotSelected()
 
-	//console.log("J'ai cliqué sur la flèche droite")
 })
 
 /* On rappelle la fonction pour afficher le dot_selected au chargement de la page pour le premier slide */
