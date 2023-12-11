@@ -39,10 +39,10 @@ let numeroSlide = 0;
 // fonction pour ajouter les dots en javascript
 
 for (let i = 0; i < slides.length; i++) {
-	const dots = banner.querySelector(".dots");
+	const SlideDots = banner.querySelector(".dots");
 	const dot = document.createElement("div");
 	dot.classList.add("dot");
-	dots.appendChild(dot);
+	SlideDots.appendChild(dot);
 
 }
 
