@@ -35,7 +35,6 @@ const slideDot = document.querySelectorAll(".dot")
 /* On défini ici la valeur de l'index de l'image du slider à 0 */
 let numeroSlide = 0;
 
-
 // fonction pour ajouter les dots en javascript
 
 for (let i = 0; i < slides.length; i++) {
@@ -43,7 +42,6 @@ for (let i = 0; i < slides.length; i++) {
 	const dot = document.createElement("div");
 	dot.classList.add("dot");
 	SlideDots.appendChild(dot);
-
 }
 
 
@@ -80,7 +78,6 @@ flecheGauche.addEventListener("click", () => {
 	*/
 
 	slideDotSelected()
-
 })
 
 //eventListener au clic sur la fleche droite
@@ -98,7 +95,6 @@ flecheDroite.addEventListener("click", () => {
 	*/
 
 	slideDotSelected()
-
 })
 
 /* On rappelle la fonction pour afficher le dot_selected au chargement de la page pour le premier slide */
