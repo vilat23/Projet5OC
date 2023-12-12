@@ -68,11 +68,11 @@ flecheGauche.addEventListener("click", () => {
 	numeroSlide = numeroSlide - 1;
 
 	if (numeroSlide < 0)
-		numeroSlide = slides.length - 1; /* .length->propriete javascript pour compter le nb d'elements ds le tableau*/
+		numeroSlide = slides.length - 1; /* .length-->propriete javascript pour compter le nb d'elements ds le tableau*/
 
 	slideChange()
 	/*
-	->Mis dans une fonction | 
+	-->Mis dans une fonction | 
 	slide.src = "./assets/images/slideshow/" + slides[numeroSlide].image;
 	slideTag.innerHTML = slides[numeroSlide].tagLine;
 	*/
@@ -89,7 +89,7 @@ flecheDroite.addEventListener("click", () => {
 
 	slideChange()
 	/*
-	->Mis dans une fonction | 
+	-->Mis dans une fonction | 
 	slide.src = "./assets/images/slideshow/" + slides[numeroSlide].image;
 	slideTag.innerHTML = slides[numeroSlide].tagLine;
 	*/
