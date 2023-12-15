@@ -30,18 +30,21 @@ pour les mettre dans des variables à cibler pour les modifier avec les fonction
 
 const slide = document.getElementById("slide")
 const slideTag = document.getElementById("slideTag")
-const slideDot = document.querySelectorAll(".dot")
+const slideDot = []
 
 /* On défini ici la valeur de l'index de l'image du slider à 0 */
 let numeroSlide = 0;
 
 // fonction pour ajouter les dots en javascript
+const slideDots = banner.querySelector(".dots");
 
 for (let i = 0; i < slides.length; i++) {
-	const SlideDots = banner.querySelector(".dots");
 	const dot = document.createElement("div");
 	dot.classList.add("dot");
-	SlideDots.appendChild(dot);
+	slideDots.appendChild(dot);
+
+	/* On insère la variable dot dans la variable tableau vide slideDot */
+	slideDot.push(dot)
 }
 
 
