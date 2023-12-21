@@ -74,11 +74,6 @@ flecheGauche.addEventListener("click", () => {
 		numeroSlide = slides.length - 1; /* .length-->propriete javascript pour compter le nb d'elements ds le tableau*/
 
 	slideChange()
-	/*
-	-->Mis dans une fonction | 
-	slide.src = "./assets/images/slideshow/" + slides[numeroSlide].image;
-	slideTag.innerHTML = slides[numeroSlide].tagLine;
-	*/
 
 	slideDotSelected()
 })
@@ -91,11 +86,7 @@ flecheDroite.addEventListener("click", () => {
 		numeroSlide = 0;
 
 	slideChange()
-	/*
-	-->Mis dans une fonction | 
-	slide.src = "./assets/images/slideshow/" + slides[numeroSlide].image;
-	slideTag.innerHTML = slides[numeroSlide].tagLine;
-	*/
+
 
 	slideDotSelected()
 })
